@@ -40,19 +40,21 @@ Sí que podría serlo ya que las ramas master y styled forman una lista, es deci
 Con mover master a donde está title, master no pierde su trabajo y además absorbe los commits que ésta no tenía y title sí.
 
 # ¿Qué comando o comandos utilizaste en el paso 27?
-/*
+
+Posiblidad 1
 $ git reset HEAD~1
 
 El reset sin -- indica que NO que queremos perder los cambios de la working copy y con HEAD~1 indicamos que queremos volver al commit padre del commit 
 actual, es decir, al commit previo al merge recien realizado. De este modo descartamos los cambios sin perder nuestra working copy.
-*/
+
+Posibilidad 2
 $ git reset --merge ORIG_HEAD
 
 Git guarda el valor previo de HEAD en la variable ORIG_HEAD, con lo que con este comando recuperamos el estado anterior sin perder los cambios de nuestra working copy.
 
 # Descartar los cambios
 
-//$ git reset --hard HEAD
+He utilizado este comando
 $ git reset --hard HEAD@{1}
 
 # ¿Qué comando utilizaste en el paso 29? 
